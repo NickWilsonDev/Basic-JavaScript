@@ -87,16 +87,8 @@ var factors = function (num) {
 //console.log(factors(10));
 
 var findKey = function(hashArray, value) {
-   // for(var key in hashArray) {
-     //   if(hashArray.key == value) {
-       //     console.log("key below");
-         //   console.log(key);
-         //   return key;
-        //}
     return hashArray.indexOf(value);
-    //}
-    //return null;
-}
+};
 
 var cipher = function (string, offset) {
     var alphabet = [];
@@ -110,7 +102,7 @@ var cipher = function (string, offset) {
         newString += alphabet[key - offset];
     }
     return newString;
-}
+};
 
 
 //console.log(cipher('nick', 3));
@@ -131,7 +123,7 @@ var deCipher = function (string, offset) {
         newString += alphabet[key + offset];
     }
     return newString;
-}
+};
 
 //console.log(deCipher('Travhf jvgubhg rqhpngvba vf yvxr fvyire va gur zvar', 13));
 
@@ -156,7 +148,7 @@ var leetspeak = function(string) {
         }
     }
     return newString;
-}
+};
 
 console.log(leetspeak('hello'));
 
@@ -167,7 +159,7 @@ var longLongVowels = function (str) {
     newStr = str.replace(/aa/gi, 'aaaaa');
     newStr = str.replace(/ii/gi, 'iiiii');
     return newStr;
-}
+};
 
 var sumNumbers = function (arr) {
     total = 0;
@@ -175,7 +167,7 @@ var sumNumbers = function (arr) {
         total = total + element;
     }
     return total;
-}
+};
 
 var positiveNumbers = function (arr) {
     newArr = [];
@@ -185,7 +177,7 @@ var positiveNumbers = function (arr) {
         }
     }
     return newArr;
-}
+};
 
 //console.log(positiveNumbers([-1, 0, 4, 5, 6]));
 
@@ -199,7 +191,7 @@ var matrixAdd = function (matrixA, matrixB) {
         newMatrix.push(tempArr);
     }
     return newMatrix;
-}
+};
 
 console.log(matrixAdd([[1, 2], [3, 4]], [[1, 1], [1, 1]]));
 
@@ -219,7 +211,7 @@ var matrixMult = function (matrixA, matrixB) {
     newMatrix.push(tempArr);
 
     return newMatrix;
-}
+};
 
 console.log(matrixMult([[2, 4], [3, 4]], [[5, 2], [3, 1]]));
 
@@ -239,10 +231,43 @@ var rockPaperScissors = function(ply1Throw, ply2Throw) {
         winner = 'player1';
     }
     return winner;
-}
+};
 
 console.log(rockPaperScissors('paper', 'paper'));
 
 console.log(rockPaperScissors('scissors', 'paper'));
 console.log(rockPaperScissors('rock', 'paper'));
 console.log(rockPaperScissors('paper', 'scissors'));
+
+
+
+/* Must take a 3x3 array as an parameter. */
+var ticTacToe = function(arr) {
+    if (arr[0][0] === arr[0][1] && arr[0][0] === arr[0][2]) {
+        return arr[0][0];
+    } else if (arr[1][0] === arr[1][1] && arr[1][0] === arr[1][2]) {
+        return arr[1][0];
+    } else if (arr[2][0] === arr[2][1] && arr[2][0] === arr[2][2]) {
+        return arr[2][2];
+    } else if (arr[0][0] === arr[1][1] && arr[0][0] === arr[2][2]) {
+        return arr[0][0];
+    } else if (arr[2][0] === arr[1][1] && arr[2][0] === arr[2][0]) {
+        return arr[2][0];
+    } else if (arr[0][0] === arr[1][0] && arr[0][0] === arr[2][0]) {
+        return arr[0][0];
+    } else if (arr[0][1] === arr[1][1] && arr[0][1] === arr[2][1]) {
+        return arr[0][1];
+    } else if (arr[0][2] === arr[1][2] && arr[0][2] === arr[2][2]) {
+        return arr[0][2];
+    } else {
+        return null;
+    }
+};
+
+var sampleGame = [
+    ['o', 'o', 'x'],
+    ['x', 'o', 'x'],
+    ['x', 'x', 'o']
+];
+
+console.log(ticTacToe(sampleGame));
